@@ -13,6 +13,11 @@ namespace MultimediaLibrary.Models
         public int LibraryCardID { get; set; }
 
         [Required]
+        [Range(10000000, 99999999, ErrorMessage = "Numer karty musi mieć 8 cyfr")]
+        [Display(Name = "Numer karty")]
+        public int LibraryCardNumber { get; set; }
+
+        [Required]
         public int PersonID { get; set; }
 
         [Display(Name = "Data wydania")]

@@ -12,6 +12,6 @@ namespace MultimediaLibrary.Enums
         Active = 1,
 
         [Display(Name = "Nie aktywna")]
-        Inactive = 2,
+        InActive = 2,
     }
 }
