@@ -18,13 +18,13 @@ namespace ContosoUniversity.Data
 
             var persons = new Person[]
             {
-                new Person{FirstName="Adam",   LastName="Nowak",      DateOfBirth=DateTime.Parse("2019-09-01")},
-                new Person{FirstName="Paweł",  LastName="Kowalczyk",  DateOfBirth=DateTime.Parse("2017-05-01")},
-                new Person{FirstName="Kamil",  LastName="Anarski",    DateOfBirth=DateTime.Parse("2018-03-13")},
-                new Person{FirstName="Piotr",  LastName="Barzduk",    DateOfBirth=DateTime.Parse("2017-01-31")},
-                new Person{FirstName="Jan",    LastName="Englert",    DateOfBirth=DateTime.Parse("2017-12-01")},
-                new Person{FirstName="Robert", LastName="Karpiński",  DateOfBirth=DateTime.Parse("2016-03-21")},
-                new Person{FirstName="Laura",  LastName="Wiśniewska", DateOfBirth=DateTime.Parse("2018-07-28")},
+                new Person{FirstName="Adam",   LastName="Nowak",      DateOfBirth=DateTime.Parse("2019-09-01"), Gender=Gender.Male, Email="an@o2.pl"},
+                new Person{FirstName="Anna",   LastName="Kowalczyk",  DateOfBirth=DateTime.Parse("2017-05-01"), Gender=Gender.Female, Email="ak@o2.pl"},
+                new Person{FirstName="Kamil",  LastName="Anarski",    DateOfBirth=DateTime.Parse("2018-03-13"), Gender=Gender.Male},
+                new Person{FirstName="Piotr",  LastName="Barzduk",    DateOfBirth=DateTime.Parse("2017-01-31"), Email="pb@o2.pl"},
+                new Person{FirstName="Janina", LastName="Englert",    DateOfBirth=DateTime.Parse("2017-12-01"), Gender=Gender.Female, Email="je@o2.pl"},
+                new Person{FirstName="Robert", LastName="Karpiński",  DateOfBirth=DateTime.Parse("2016-03-21"), Gender=Gender.Male, Email="rk@o2.pl"},
+                new Person{FirstName="Laura",  LastName="Wiśniewska", DateOfBirth=DateTime.Parse("2018-07-28"), Gender=Gender.Female},
                 new Person{FirstName="Norman", LastName="Oliński",    DateOfBirth=DateTime.Parse("2019-09-21")}
             };
 
@@ -36,7 +36,7 @@ namespace ContosoUniversity.Data
                 new Supply{Title="Pan Tadeusz"       ,Author="Adam Mickiewicz",                MediaType=MediaType.Book,        Grade=Grade.F, Comment="Lektura"},
                 new Supply{Title="Solaris"           ,Author="Stanislaw Lem",                  MediaType=MediaType.Audiobook,   Grade=Grade.A, Comment="Gruba"},
                 new Supply{Title="Warsztat hakera"   ,Author="Matthew Hickey",                 MediaType=MediaType.Book,        Grade=Grade.D, Comment="Nudna"},
-                new Supply{Title="Pink Floyd"        ,Author="The Division Bell",              MediaType=MediaType.CompactDisc, Grade=Grade.A},
+                new Supply{Title="The Division Bell" ,Author="Pink Floyd",                     MediaType=MediaType.CompactDisc, Grade=Grade.A},
                 new Supply{Title="Grywalizacja"      ,Author="Paweł Tkaczyk",                  MediaType=MediaType.Audiobook,   Grade=Grade.B},
                 new Supply{Title="Programista"       ,Author="Dom Wydawniczy Anna Adamczyk",   MediaType=MediaType.Journal},
                 new Supply{Title="Zdjęcia z wakacji" ,Author="Jan Kowalczyk",                  MediaType=MediaType.Pendrive}

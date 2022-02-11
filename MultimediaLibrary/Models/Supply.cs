@@ -27,11 +27,13 @@ namespace MultimediaLibrary.Models
         [Display(Name = "Rodzaj")]
         public MediaType MediaType { get; set; }
 
+        [DataType(DataType.MultilineText)]
+        //[DisplayFormat(NullDisplayText = "-")]
         [Display(Name = "Opis")]
         public string Comment { get; set; }
 
+        [DisplayFormat(NullDisplayText = "-")]
         [Display(Name = "Ocena")]
-        [DisplayFormat(NullDisplayText = "Brak oceny")]
         public Grade? Grade { get; set; }
     }
 }

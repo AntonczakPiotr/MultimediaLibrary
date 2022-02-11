@@ -1,13 +1,14 @@
 ﻿@page
 @model MultimediaLibrary.Pages.Persons.EditModel
 
+@using MultimediaLibrary.Enums
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edycja</h1>
 
-<h4>Person</h4>
+<h4>Czytelnik</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -31,23 +32,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="Person.Gender" class="control-label"></label>
-                <select asp-for="Person.Gender" class="form-control"></select>
+                <select asp-for="Person.Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
                 <span asp-validation-for="Person.Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Person.DateOfBirth" class="control-label"></label>
-                <input asp-for="Person.DateOfBirth" class="form-control" />
+                <input asp-for="Person.DateOfBirth" class="form-control"/>
                 <span asp-validation-for="Person.DateOfBirth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Wróć do listy</a>
 </div>
 
 @section Scripts {

@@ -1,0 +1,52 @@
+﻿@page
+@model MultimediaLibrary.Pages.NewFolder.DeleteModel
+
+@{
+    ViewData["Title"] = "Usuwanie";
+}
+
+<h1>Usuwanie</h1>
+<h4>Zasób biblioteczny</h4>
+<hr />
+
+<div>
+    <h3>Czy na pewno chcesz usunąć ten zasób biblioteczny?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supply.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supply.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supply.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supply.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supply.MediaType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supply.MediaType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supply.Comment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supply.Comment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supply.Grade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supply.Grade)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Supply.SupplyID" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-page="./Index">Wróć do listy</a>
+    </form>
+</div>

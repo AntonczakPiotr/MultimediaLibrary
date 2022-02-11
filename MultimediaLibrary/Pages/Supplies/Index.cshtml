@@ -1,0 +1,60 @@
+﻿@page
+@model MultimediaLibrary.Pages.NewFolder.IndexModel
+
+@{
+    ViewData["Title"] = "Zasoby biblioteczne";
+}
+
+<h1>Zasoby biblioteczne</h1>
+
+<p>
+    <a asp-page="Create">Dodaj</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].MediaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].Grade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Supply) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SupplyID">Edytuj</a> |
+                <a asp-page="./Details" asp-route-id="@item.SupplyID">Szczegóły</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SupplyID">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

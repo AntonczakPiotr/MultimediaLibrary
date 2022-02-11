@@ -1,0 +1,57 @@
+﻿@page
+@model MultimediaLibrary.Pages.NewFolder.CreateModel
+
+@using MultimediaLibrary.Enums
+@{
+    ViewData["Title"] = "Zasoby biblioteczne";
+}
+
+<h1>Dodawanie</h1>
+
+<h4>Zasoby biblioteczne</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Supply.Title" class="control-label"></label>
+                <input asp-for="Supply.Title" class="form-control" />
+                <span asp-validation-for="Supply.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supply.Author" class="control-label"></label>
+                <input asp-for="Supply.Author" class="form-control" />
+                <span asp-validation-for="Supply.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supply.MediaType" class="control-label"></label>
+                <select asp-for="Supply.MediaType" class="form-control" asp-items="Html.GetEnumSelectList<MediaType>()"></select>
+                <span asp-validation-for="Supply.MediaType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supply.Comment" class="control-label"></label>
+                <textarea asp-for="Supply.Comment" class="form-control text-box multi-line"></textarea>
+                <span asp-validation-for="Supply.Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supply.Grade" class="control-label"></label>
+                <select asp-for="Supply.Grade" class="form-control" asp-items="Html.GetEnumSelectList<Grade>()">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
+                <span asp-validation-for="Supply.Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Wróć do Listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -20,12 +20,17 @@ namespace MultimediaLibrary.Models
         [Display(Name = "Imię")]
         public string FirstName { get; set; }
 
+        [EmailAddress]
+        [DisplayFormat(NullDisplayText = "-")]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail")]
         public string Email { get; set; }
 
+        [DisplayFormat(NullDisplayText = "-")]
         [Display(Name = "Płeć")]
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Data urodzenia")]
         public DateTime? DateOfBirth { get; set; }
 
