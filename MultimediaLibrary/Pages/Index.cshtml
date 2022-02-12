@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Start";
+    var myStyle = "width:400px;";
 }
 
 <div class="jumbotron">
@@ -13,5 +14,26 @@
     <p>
         <a class="btn btn-primary btn-lg" asp-area="" asp-page="/About">Informacje o aplikacji &raquo;</a>
     </p>
+</div>
 
+<div class="jumbotron">
+    <p class="lead">
+        Sktóty do najczęstrzych aktywności:
+    </p>
+    <div>
+        <br />
+        <p>
+            <a class="btn btn-success btn-lg" asp-area="" asp-page="/Activities/Create" style="@myStyle">Zarejestruj wypożyczenie lub zwrot &raquo;</a>
+        </p>
+
+        <br />
+        <p>
+            <a class="btn btn-success btn-lg" asp-area="" asp-page="/Supplies/Index" style="@myStyle">Przeglądaj dostępność zasobów &raquo;</a>
+        </p>
+
+        <br />
+        <p>
+            <a class="btn btn-success btn-lg" asp-area="" asp-page="/Activities/Index" style="@myStyle">Zobacz aktywności czytelników &raquo;</a>
+        </p>
+    </div>
 </div>
