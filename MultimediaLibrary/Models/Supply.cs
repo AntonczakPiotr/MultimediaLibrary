@@ -12,18 +12,18 @@ namespace MultimediaLibrary.Models
     /// </summary>
     public class Supply
     {
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         public int SupplyID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Tytuł")]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Autor")]
         public string Author { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Rodzaj")]
         public MediaType MediaType { get; set; }
 

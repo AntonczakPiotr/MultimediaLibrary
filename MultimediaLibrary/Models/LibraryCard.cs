@@ -9,7 +9,7 @@ namespace MultimediaLibrary.Models
 {
     public class LibraryCard
     {
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         public int LibraryCardID { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
@@ -30,7 +30,7 @@ namespace MultimediaLibrary.Models
         [Display(Name = "Data ważności")]
         public DateTime? ExpirationDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Stan")]
         public State State { get; set; }
 

@@ -9,14 +9,14 @@ namespace MultimediaLibrary.Models
 {
     public class Person
     {
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         public int PersonID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Nazwisko")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Imię")]
         public string FirstName { get; set; }
 
