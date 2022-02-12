@@ -1,0 +1,54 @@
+﻿@page
+@model MultimediaLibrary.Pages.Activities.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ActivityType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].ActivityDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].Supply)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activity[0].Person)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Activity) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivityDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supply.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FirstName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ActivityID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ActivityID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ActivityID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
