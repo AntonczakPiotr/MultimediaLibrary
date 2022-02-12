@@ -26,10 +26,9 @@ namespace MultimediaLibrary.Models
 
         [Required(ErrorMessage = "Pole {0} jest wymagane")]
         [Display(Name = "Rodzaj")]
-        public MediaType MediaType { get; set; }
+        public SupplyType SupplyType { get; set; }
 
         [DataType(DataType.MultilineText)]
-        //[DisplayFormat(NullDisplayText = "-")]
         [Display(Name = "Opis")]
         public string Comment { get; set; }
 
@@ -37,7 +36,7 @@ namespace MultimediaLibrary.Models
         [Display(Name = "Ocena")]
         public Grade? Grade { get; set; }
 
-        public string Summary { get => $"{Title} - {Author} ({MediaType.GetDisplayName()})"; }
+        public string Summary { get => $"{Title} - {Author} ({SupplyType.GetDisplayName()})"; }
 
         [Required(ErrorMessage = "Pole {0} jest wymagane")]
         [Display(Name = "Status")]

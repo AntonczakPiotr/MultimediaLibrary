@@ -9,7 +9,7 @@ namespace MultimediaLibrary.Enums
     /// <summary>
     /// Typy zasobów możliwych do przechowywania w bibliotece
     /// </summary>
-    public enum MediaType
+    public enum SupplyType
     {
         [Display(Name = "Książka")]
         Book = 1,
