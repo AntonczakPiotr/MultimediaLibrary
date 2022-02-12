@@ -1,0 +1,53 @@
+﻿@page
+@model MultimediaLibrary.Pages.LibraryCards.DeleteModel
+
+@{
+    ViewData["Title"] = "Usuwanie";
+}
+
+<h1>Usuwanie</h1>
+
+<h4>Karta biblioteczna</h4>
+<hr />
+
+<div>
+    <h3>Czy na pewno chcesz usunąć tego czytelnika?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LibraryCard.LibraryCardNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LibraryCard.LibraryCardNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LibraryCard.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LibraryCard.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LibraryCard.ExpirationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LibraryCard.ExpirationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LibraryCard.State)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LibraryCard.State)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LibraryCard.Person)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LibraryCard.Person.FirstName)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="LibraryCard.LibraryCardID" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-page="./Index">Wróć do listy</a>
+    </form>
+</div>

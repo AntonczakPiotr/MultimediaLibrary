@@ -1,0 +1,60 @@
+﻿@page
+@model MultimediaLibrary.Pages.LibraryCards.IndexModel
+
+@{
+    ViewData["Title"] = "Karty";
+}
+
+<h1>Karty biblioteczne</h1>
+
+<p>
+    <a asp-page="Create">Dodaj</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].LibraryCardNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].Person)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.LibraryCard) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibraryCardNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FullName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PersonID">Edytuj</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonID">Szczegóły</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonID">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

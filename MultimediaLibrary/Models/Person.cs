@@ -37,5 +37,8 @@ namespace MultimediaLibrary.Models
         public ICollection<LibraryCard> LibraryCards { get; set; }
     
         public ICollection<Activity> Activities { get; set; }
+
+        public string FullName { get => $"{LastName} {FirstName}"; }
+
     }
 }

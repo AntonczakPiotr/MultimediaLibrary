@@ -1,0 +1,56 @@
+﻿@page
+@model MultimediaLibrary.Pages.LibraryCards.EditModel
+
+@using MultimediaLibrary.Enums
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edycja</h1>
+
+<h4>Karta biblioteczna</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LibraryCard.LibraryCardID" />
+            <div class="form-group">
+                <label asp-for="LibraryCard.LibraryCardNumber" class="control-label"></label>
+                <input asp-for="LibraryCard.LibraryCardNumber" class="form-control" />
+                <span asp-validation-for="LibraryCard.LibraryCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibraryCard.PersonID" class="control-label"></label>
+                <select asp-for="LibraryCard.Person.FullName" class="form-control" asp-items="ViewBag.PersonID"></select>
+                <span asp-validation-for="LibraryCard.PersonID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibraryCard.StartDate" class="control-label"></label>
+                <input asp-for="LibraryCard.StartDate" class="form-control" />
+                <span asp-validation-for="LibraryCard.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibraryCard.ExpirationDate" class="control-label"></label>
+                <input asp-for="LibraryCard.ExpirationDate" class="form-control" />
+                <span asp-validation-for="LibraryCard.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibraryCard.State" class="control-label"></label>
+                <select asp-for="LibraryCard.State" class="form-control" asp-items="Html.GetEnumSelectList<State>()"></select>
+                    <span asp-validation-for="LibraryCard.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Wróć do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

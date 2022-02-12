@@ -20,17 +20,24 @@ namespace MultimediaLibrary.Models
         [Required]
         public int PersonID { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Data wydania")]
         public DateTime StartDate { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Data ważności")]
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
 
         [Required]
         [Display(Name = "Stan")]
         public State State { get; set; }
 
+        [Display(Name = "Właściciel")]
         public Person Person { get; set; }
 
+        //public LibraryCard()
+        //{
+        //    LibraryCardNumber = 99999999;
+        //}
     }
 }
