@@ -24,7 +24,9 @@ namespace MultimediaLibrary.Pages.LibraryCards
         public async Task OnGetAsync()
         {
             LibraryCard = await _context.LibraryCards
-                .Include(l => l.Person).ToListAsync();
+                .Include(l => l.Person)
+                .OrderBy(a => a.Person.LastName)
+                .ToListAsync();
         }
     }
 }

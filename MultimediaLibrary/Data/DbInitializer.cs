@@ -69,18 +69,18 @@ namespace ContosoUniversity.Data
 
             var activities = new Activity[]
             {
-                new Activity{ActivityDate = DateTime.Parse("2018-02-28"),ActivityType=ActivityType.Borrowing,PersonID=8,SupplyID= 2},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-18"),ActivityType=ActivityType.Borrowing,PersonID=1,SupplyID= 1},
-                new Activity{ActivityDate = DateTime.Parse("2018-02-28"),ActivityType=ActivityType.Borrowing,PersonID=3,SupplyID= 2},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-21"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 4},
-                new Activity{ActivityDate = DateTime.Parse("2018-03-28"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 2},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-23"),ActivityType=ActivityType.Borrowing,PersonID=5,SupplyID= 5},
-                new Activity{ActivityDate = DateTime.Parse("2018-04-28"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 2},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-25"),ActivityType=ActivityType.Borrowing,PersonID=6,SupplyID= 6},
-                new Activity{ActivityDate = DateTime.Parse("2018-05-18"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 7},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-28"),ActivityType=ActivityType.Borrowing,PersonID=7,SupplyID= 1},
-                new Activity{ActivityDate = DateTime.Parse("2018-06-18"),ActivityType=ActivityType.Borrowing,PersonID=1,SupplyID= 2},
-                new Activity{ActivityDate = DateTime.Parse("2018-07-28"),ActivityType=ActivityType.Borrowing,PersonID=1,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2021-02-28 16:35"),ActivityType=ActivityType.Borrowing,PersonID=8,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2022-01-18 18:25"),ActivityType=ActivityType.Borrowing,PersonID=1,SupplyID= 1},
+                new Activity{ActivityDate = DateTime.Parse("2022-02-12  8:15"),ActivityType=ActivityType.Returning,PersonID=3,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2021-07-21 10:05"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 4},
+                new Activity{ActivityDate = DateTime.Parse("2021-03-28 12:55"),ActivityType=ActivityType.Returning,PersonID=2,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2020-07-23 13:15"),ActivityType=ActivityType.Lost,     PersonID=5,SupplyID= 5},
+                new Activity{ActivityDate = DateTime.Parse("2019-04-28 16:45"),ActivityType=ActivityType.Returning,PersonID=2,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2019-07-25 22:45"),ActivityType=ActivityType.Returning,PersonID=6,SupplyID= 6},
+                new Activity{ActivityDate = DateTime.Parse("2020-05-18 19:35"),ActivityType=ActivityType.Borrowing,PersonID=2,SupplyID= 7},
+                new Activity{ActivityDate = DateTime.Parse("2021-11-23 20:15"),ActivityType=ActivityType.Returning,PersonID=7,SupplyID= 1},
+                new Activity{ActivityDate = DateTime.Parse("2021-12-18  9:25"),ActivityType=ActivityType.Lost,     PersonID=1,SupplyID= 2},
+                new Activity{ActivityDate = DateTime.Parse("2021-11-24 14:15"),ActivityType=ActivityType.Borrowing,PersonID=1,SupplyID= 2},
             };
 
             context.Activities.AddRange(activities);

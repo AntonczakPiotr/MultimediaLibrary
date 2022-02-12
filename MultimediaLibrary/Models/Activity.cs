@@ -23,15 +23,19 @@ namespace MultimediaLibrary.Models
         public int PersonID { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
-        [Display(Name = "Stan")]
+        [Display(Name = "Rodzaj aktywności")]
         public ActivityType ActivityType { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd hh:mm}")]
         [Display(Name = "Data")]
         public DateTime ActivityDate { get; set; }
 
+        [Display(Name = "Zasób")]
         public Supply Supply { get; set; }
 
+        [Display(Name = "Czytelnik")]
         public Person Person { get; set; }
     }
 }

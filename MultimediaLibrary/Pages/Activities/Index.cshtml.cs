@@ -25,7 +25,9 @@ namespace MultimediaLibrary.Pages.Activities
         {
             Activity = await _context.Activities
                 .Include(a => a.Person)
-                .Include(a => a.Supply).ToListAsync();
+                .Include(a => a.Supply)
+                .OrderByDescending(a => a.ActivityDate)
+                .ToListAsync();
         }
     }
 }

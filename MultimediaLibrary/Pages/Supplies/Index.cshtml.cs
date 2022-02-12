@@ -23,7 +23,10 @@ namespace MultimediaLibrary.Pages.NewFolder
 
         public async Task OnGetAsync()
         {
-            Supply = await _context.Supplies.ToListAsync();
+            Supply = await _context.Supplies
+                .OrderBy(a => a.Title)
+                .ThenBy(a => a.Author)
+                .ToListAsync();
         }
     }
 }

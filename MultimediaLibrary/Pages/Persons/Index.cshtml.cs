@@ -19,11 +19,14 @@ namespace MultimediaLibrary.Pages.Persons
             _context = context;
         }
 
-        public IList<Person> Person { get;set; }
+        public IList<Person> Person { get; set; }
 
         public async Task OnGetAsync()
         {
-            Person = await _context.Persons.ToListAsync();
+            Person = await _context.Persons
+                .OrderBy(a => a.LastName)
+                .ThenBy(a => a.FirstName)
+                .ToListAsync();
         }
     }
 }

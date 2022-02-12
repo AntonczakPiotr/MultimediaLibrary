@@ -2,13 +2,13 @@
 @model MultimediaLibrary.Pages.Activities.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Aktywności";
 }
 
-<h1>Index</h1>
+<h1>Aktywności</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-success btn-lg" asp-page="Create">Zarejestruj nową aktywność &raquo;</a>
 </p>
 <table class="table">
     <thead>
@@ -29,26 +29,22 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Activity) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supply.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Person.FirstName)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ActivityID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ActivityID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ActivityID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Activity)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supply.Summary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Person.FullName)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
