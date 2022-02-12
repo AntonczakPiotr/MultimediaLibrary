@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.LibraryCard[0].LibraryCardID)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.LibraryCard[0].LibraryCardNumber)
             </th>
             <th>
@@ -37,9 +34,6 @@
     <tbody>
 @foreach (var item in Model.LibraryCard) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LibraryCardID)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LibraryCardNumber)
             </td>
