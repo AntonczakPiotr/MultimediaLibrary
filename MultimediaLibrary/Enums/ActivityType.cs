@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Enums
 {
+    /// <summary>
+    /// Możliwe typy aktywności
+    /// </summary>
     public enum ActivityType
     {
         [Display(Name = "Wypożyczenie")]

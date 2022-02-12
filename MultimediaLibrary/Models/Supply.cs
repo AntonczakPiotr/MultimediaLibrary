@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MultimediaLibrary.Models
 {
     /// <summary>
-    /// Klase reprezentująca element zbioru biblioteki
+    /// Klasa reprezentująca element zbioru biblioteki
     /// </summary>
     public class Supply
     {

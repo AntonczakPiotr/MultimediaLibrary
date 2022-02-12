@@ -7,6 +7,9 @@ using MultimediaLibrary.Models;
 
 namespace MultimediaLibrary.Data
 {
+    /// <summary>
+    /// Mapowanie bazy danych
+    /// </summary>
     public class LibraryContext : DbContext
     {
         public LibraryContext (DbContextOptions<LibraryContext> options)

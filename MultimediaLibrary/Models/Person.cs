@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Models
 {
+    /// <summary>
+    /// Klasa reprezentująca dane czytelników
+    /// </summary>
     public class Person
     {
         [Required(ErrorMessage ="Pole {0} jest wymagane")]

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Models
 {
+    /// <summary>
+    /// Klasa obiektów aktywności
+    /// Służy do rejestrowania kto, kiedy, co wypożyczył, zwrócił, lub zagubił zasób biblioteki
+    /// </summary>
     public class Activity
     {
         [Required(ErrorMessage ="Pole {0} jest wymagane")]

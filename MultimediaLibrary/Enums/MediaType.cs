@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Enums
 {
+    /// <summary>
+    /// Typy zasobów możliwych do przechowywania w bibliotece
+    /// </summary>
     public enum MediaType
     {
         [Display(Name = "Książka")]

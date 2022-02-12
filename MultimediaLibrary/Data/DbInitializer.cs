@@ -6,14 +6,17 @@ using System.Linq;
 
 namespace ContosoUniversity.Data
 {
+    /// <summary>
+    /// Inicjowanie BD
+    /// </summary>
     public static class DbInitializer
     {
         public static void Initialize(LibraryContext context)
         {
-            // Look for any persons.
+            // Jeżeli w BD są jakieś osoby inicjacja BD nie jest przeprowadzana
             if (context.Persons.Any())
             {
-                return;   // DB has been seeded
+                return;   // DB została już zainicjowana
             }
 
             var persons = new Person[]

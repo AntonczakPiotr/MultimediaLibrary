@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Enums
 {
+    /// <summary>
+    /// Status aktywności
+    /// </summary>
     public enum State
     {
         [Display(Name = "Aktywna")]

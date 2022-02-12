@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Enums
 {
+    /// <summary>
+    /// Ocena
+    /// </summary>
     public enum Grade
     {
         [Display(Name = "Świetna(y)")]

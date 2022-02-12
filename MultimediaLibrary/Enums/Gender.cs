@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Enums
 {
+    /// <summary>
+    /// Płeć osoby
+    /// </summary>
     public enum Gender
     {
         [Display(Name = "Mężczyzna")]

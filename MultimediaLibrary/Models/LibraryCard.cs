@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MultimediaLibrary.Models
 {
+    /// <summary>
+    /// Klasa opisująca karty biblioteczne czytelników
+    /// </summary>
     public class LibraryCard
     {
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
