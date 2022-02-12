@@ -21,7 +21,7 @@ namespace MultimediaLibrary.Pages.LibraryCards
 
         public IActionResult OnGet()
         {
-        ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
+            ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
             return Page();
         }
 
@@ -33,6 +33,7 @@ namespace MultimediaLibrary.Pages.LibraryCards
         {
             if (!ModelState.IsValid)
             {
+                ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
                 return Page();
             }
 
