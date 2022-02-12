@@ -11,16 +11,18 @@ namespace MultimediaLibrary.Extensions
     {
         public static string GetDisplayName(this System.Enum enumValue)
         {
-            return enumValue.GetType()
-                            .GetMember(enumValue.ToString())
-                            .First()
-                            .GetCustomAttribute<DisplayAttribute>()
-                            .Name;
+            try
+            {
+                return enumValue.GetType()
+                        .GetMember(enumValue.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>()
+                        .Name;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
         }
-
-
     }
 }
-
-
-

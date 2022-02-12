@@ -39,5 +39,9 @@ namespace MultimediaLibrary.Models
 
         public string Summary { get => $"{Title} - {Author} ({MediaType.GetDisplayName()})"; }
 
+        [Required(ErrorMessage = "Pole {0} jest wymagane")]
+        [Display(Name = "Status")]
+        public SupplyStatus SupplyStatus { get; set; }
+
     }
 }

@@ -36,13 +36,13 @@ namespace ContosoUniversity.Data
 
             var supplies = new Supply[]
             {
-                new Supply{Title="Pan Tadeusz"       ,Author="Adam Mickiewicz",                MediaType=MediaType.Book,        Grade=Grade.F, Comment="Lektura"},
-                new Supply{Title="Solaris"           ,Author="Stanislaw Lem",                  MediaType=MediaType.Audiobook,   Grade=Grade.A, Comment="Gruba"},
-                new Supply{Title="Warsztat hakera"   ,Author="Matthew Hickey",                 MediaType=MediaType.Book,        Grade=Grade.D, Comment="Nudna"},
-                new Supply{Title="The Division Bell" ,Author="Pink Floyd",                     MediaType=MediaType.CompactDisc, Grade=Grade.A},
-                new Supply{Title="Grywalizacja"      ,Author="Paweł Tkaczyk",                  MediaType=MediaType.Audiobook,   Grade=Grade.B},
-                new Supply{Title="Programista"       ,Author="Dom Wydawniczy Anna Adamczyk",   MediaType=MediaType.Journal},
-                new Supply{Title="Zdjęcia z wakacji" ,Author="Jan Kowalczyk",                  MediaType=MediaType.Pendrive}
+                new Supply{Title="Pan Tadeusz",       Author="Adam Mickiewicz",                MediaType=MediaType.Book,        SupplyStatus=SupplyStatus.Returned, Grade=Grade.F, Comment="Lektura"},
+                new Supply{Title="Solaris",           Author="Stanislaw Lem",                  MediaType=MediaType.Audiobook,   SupplyStatus=SupplyStatus.Returned, Grade=Grade.A, Comment="Gruba"},
+                new Supply{Title="Warsztat hakera",   Author="Matthew Hickey",                 MediaType=MediaType.Book,        SupplyStatus=SupplyStatus.Returned, Grade=Grade.D, Comment="Nudna"},
+                new Supply{Title="The Division Bell", Author="Pink Floyd",                     MediaType=MediaType.CompactDisc, SupplyStatus=SupplyStatus.Returned, Grade=Grade.A},
+                new Supply{Title="Grywalizacja",      Author="Paweł Tkaczyk",                  MediaType=MediaType.Audiobook,   SupplyStatus=SupplyStatus.Returned, Grade=Grade.B},
+                new Supply{Title="Programista",       Author="Dom Wydawniczy Anna Adamczyk",   MediaType=MediaType.Journal,     SupplyStatus=SupplyStatus.Returned },
+                new Supply{Title="Zdjęcia z wakacji", Author="Jan Kowalczyk",                  MediaType=MediaType.Pendrive,    SupplyStatus=SupplyStatus.Returned }
             };
 
             context.Supplies.AddRange(supplies);

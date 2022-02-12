@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MultimediaLibrary.Data;
+using MultimediaLibrary.Enums;
 using MultimediaLibrary.Models;
 
 namespace MultimediaLibrary.Pages.Activities
@@ -34,12 +36,27 @@ namespace MultimediaLibrary.Pages.Activities
         {
             if (!ModelState.IsValid)
             {
+                ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
+                ViewData["SupplyID"] = new SelectList(_context.Supplies, "SupplyID", "Summary");
                 return Page();
             }
 
-            Activity.ActivityDate = DateTime.Now;
-            _context.Activities.Add(Activity);
-            await _context.SaveChangesAsync();
+            Supply supply;
+            try
+            {
+                Activity.ActivityDate = DateTime.Now;
+
+                supply = _context.Supplies.Single(e => e.SupplyID == Activity.SupplyID);
+                supply.SupplyStatus = (SupplyStatus)(int)Activity.ActivityType;
+
+                _context.Activities.Add(Activity);
+
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
 
             return RedirectToPage("./Index");
         }

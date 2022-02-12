@@ -28,6 +28,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Supply[0].Grade)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supply[0].SupplyStatus)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,6 +51,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplyStatus)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.SupplyID">Edytuj</a> |
