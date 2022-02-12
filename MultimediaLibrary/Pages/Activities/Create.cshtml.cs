@@ -21,8 +21,8 @@ namespace MultimediaLibrary.Pages.Activities
 
         public IActionResult OnGet()
         {
-        ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FirstName");
-        ViewData["SupplyID"] = new SelectList(_context.Supplies, "SupplyID", "Author");
+        ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
+        ViewData["SupplyID"] = new SelectList(_context.Supplies, "SupplyID", "Summary");
             return Page();
         }
 
@@ -37,6 +37,7 @@ namespace MultimediaLibrary.Pages.Activities
                 return Page();
             }
 
+            Activity.ActivityDate = DateTime.Now;
             _context.Activities.Add(Activity);
             await _context.SaveChangesAsync();
 

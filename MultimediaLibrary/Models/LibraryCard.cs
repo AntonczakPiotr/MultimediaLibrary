@@ -21,7 +21,7 @@ namespace MultimediaLibrary.Models
         public int LibraryCardNumber { get; set; }
 
         [Required(ErrorMessage = "Pole {0} jest wymagane")]
-        [Display(Name = "Właściciel")]
+        [Display(Name = "Czytelnik")]
         public int PersonID { get; set; }
 
         [Required(ErrorMessage = "Pole {0} jest wymagane")]

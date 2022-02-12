@@ -17,25 +17,24 @@ namespace MultimediaLibrary.Models
         public int ActivityID { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
+        [Display(Name = "Zasób")]
         public int SupplyID { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
+        [Display(Name = "Czytelnik")]
         public int PersonID { get; set; }
 
         [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [Display(Name = "Rodzaj aktywności")]
         public ActivityType ActivityType { get; set; }
 
-        [Required(ErrorMessage ="Pole {0} jest wymagane")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd hh:mm}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
         [Display(Name = "Data")]
-        public DateTime ActivityDate { get; set; }
+        public DateTime? ActivityDate { get; set; }
 
-        [Display(Name = "Zasób")]
         public Supply Supply { get; set; }
 
-        [Display(Name = "Czytelnik")]
         public Person Person { get; set; }
     }
 }

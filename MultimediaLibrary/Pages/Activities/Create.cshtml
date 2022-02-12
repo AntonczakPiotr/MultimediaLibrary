@@ -1,13 +1,14 @@
 ﻿@page
 @model MultimediaLibrary.Pages.Activities.CreateModel
 
+@using MultimediaLibrary.Enums
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nowa aktywność";
 }
 
-<h1>Create</h1>
+<h1>Dodawanie</h1>
 
-<h4>Activity</h4>
+<h4>Rejestrowanie nowej aktywności</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,31 +16,34 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Activity.SupplyID" class="control-label"></label>
-                <select asp-for="Activity.SupplyID" class ="form-control" asp-items="ViewBag.SupplyID"></select>
+                <select asp-for="Activity.SupplyID" class="form-control" asp-items="ViewBag.SupplyID">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
+                <span asp-validation-for="Activity.SupplyID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Activity.PersonID" class="control-label"></label>
-                <select asp-for="Activity.PersonID" class ="form-control" asp-items="ViewBag.PersonID"></select>
+                <select asp-for="Activity.PersonID" class="form-control" asp-items="ViewBag.PersonID">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
+                <span asp-validation-for="Activity.PersonID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Activity.ActivityType" class="control-label"></label>
-                <select asp-for="Activity.ActivityType" class="form-control"></select>
+                <select asp-for="Activity.ActivityType" class="form-control" asp-items="Html.GetEnumSelectList<ActivityType>()">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
                 <span asp-validation-for="Activity.ActivityType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Activity.ActivityDate" class="control-label"></label>
-                <input asp-for="Activity.ActivityDate" class="form-control" />
-                <span asp-validation-for="Activity.ActivityDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Zarejestruj nową aktywność" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Wróć do listy</a>
 </div>
 
 @section Scripts {
