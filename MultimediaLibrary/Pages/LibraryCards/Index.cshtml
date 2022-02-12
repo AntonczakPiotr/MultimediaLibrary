@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.LibraryCard[0].LibraryCardID)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.LibraryCard[0].LibraryCardNumber)
             </th>
             <th>
@@ -35,6 +38,9 @@
 @foreach (var item in Model.LibraryCard) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.LibraryCardID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.LibraryCardNumber)
             </td>
             <td>
@@ -50,9 +56,9 @@
                 @Html.DisplayFor(modelItem => item.Person.FullName)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.PersonID">Edytuj</a> |
-                <a asp-page="./Details" asp-route-id="@item.PersonID">Szczegóły</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PersonID">Usuń</a>
+                <a asp-page="./Edit" asp-route-id="@item.LibraryCardID">Edytuj</a> |
+                <a asp-page="./Details" asp-route-id="@item.LibraryCardID">Szczegóły</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LibraryCardID">Usuń</a>
             </td>
         </tr>
 }

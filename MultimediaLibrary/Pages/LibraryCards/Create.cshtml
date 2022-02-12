@@ -20,8 +20,11 @@
                 <span asp-validation-for="LibraryCard.LibraryCardNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LibraryCard.Person.FullName" class="control-label"></label>
-                <select asp-for="LibraryCard.Person.FullName" class="form-control" asp-items="ViewBag.PersonID"></select>
+                <label asp-for="LibraryCard.Person" class="control-label"></label>
+                <select asp-for="LibraryCard.PersonID" class="form-control" asp-items="ViewBag.PersonID">
+                    <option selected="selected" value="">Nie określono</option>
+                </select>
+                <span asp-validation-for="LibraryCard.PersonID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LibraryCard.StartDate" class="control-label"></label>

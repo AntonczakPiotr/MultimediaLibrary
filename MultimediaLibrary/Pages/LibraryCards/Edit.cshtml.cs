@@ -37,7 +37,7 @@ namespace MultimediaLibrary.Pages.LibraryCards
             {
                 return NotFound();
             }
-           ViewData["PersonID"] = new SelectList(_context.Persons, "Właściciel", "FullName");
+           ViewData["PersonID"] = new SelectList(_context.Persons, "PersonID", "FullName");
             return Page();
         }
 
